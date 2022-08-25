@@ -2,24 +2,23 @@ import { FC, ReactNode } from "react";
 import "./styles.scss";
 import cn from 'classnames';
 
-
 interface BaseButtonProps<T> {
     handleClick?: () => void;
-    mixClass: string;
-    children?: ReactNode;
+    className: string;
     text: ReactNode | string;
-    outlined?: boolean;
-    filled?: boolean;
-    disabled?: boolean;
+    isOutlined?: boolean;
+    isFilled?: boolean;
+    isDisabled?: boolean;
     others?: HTMLButtonElement;
 }
-export const Button: FC<BaseButtonProps<HTMLButtonElement>> = ({ handleClick, mixClass, children, text, outlined, filled, ...others }) => {
-    return (
-        <button onClick={handleClick}
-            disabled={others.disabled} 
-            className={cn(mixClass, outlined && 'btn_outlined', filled && 'btn_filled', others.disabled && 'btn_disabled')}
-                >
-                {text}
-        </button>
-    );
+
+export const Button: FC<BaseButtonProps<HTMLButtonElement>> = ({ handleClick, className, text, isOutlined, isFilled, ...others }) => {
+  return (
+    <button onClick={handleClick}
+      disabled={others.isDisabled} 
+      className={cn(className, isOutlined && 'btn_outlined', isFilled && 'btn_filled', others.isDisabled && 'btn_disabled')}
+        >
+        {text}
+    </button>
+  );
 }
