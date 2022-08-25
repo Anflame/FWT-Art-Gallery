@@ -1,18 +1,18 @@
-name: CI                            // имя потока 
+name: CI                            
 on:
 branch
   pull_request:
-    branches: [ master ]      // на эту ветку вешаем наблюдатель за pull request
-jobs:	                // группировка работ, которые должны быть сделаны
-  build:              // имя первой работы
+    branches: [ master ]      
+jobs:	                
+  build:              
     runs-on: ubuntu-latest
-    steps:                		 // шаги в каждой работе
+    steps:                		
       - uses: actions/checkout@v2
       
-      - name: npm install        // имя шага, желательно понятное
-        run: npm i		// какая команда запускается на сервере
+      - name: npm install       
+        run: npm i		
 
       - name: Deploy to gh-pages
-        run: |         // символ | если команды идут несколько подряд 
+        run: |
    		git remote set-url origin https://git:${{ secrets.ACCESS_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git
            npm run deploy
