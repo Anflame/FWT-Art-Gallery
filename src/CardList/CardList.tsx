@@ -3,7 +3,7 @@ import { Card } from "../Card/Card";
 import type { CardProps } from "../types";
 import styles from "./styles.module.scss";
 
-interface CardListProps {
+type CardListProps = {
     painters: CardProps[];
 }
 
