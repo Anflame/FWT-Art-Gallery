@@ -1,15 +1,7 @@
 import { FC } from "react";
 import styles from './styles.module.scss';
 import images from '../images/cardImg.jpg';
-
-export interface CardProps {
-    title: string;
-    name: string;
-    handleCLick?: () => void;
-    img: string;
-    classname?: string;
-    primary?: boolean;
-}
+import type { CardProps } from "../types";
 
 export const Card: FC<CardProps> = ({ title, name, img, classname, handleCLick, ...args }) => {
     return (
