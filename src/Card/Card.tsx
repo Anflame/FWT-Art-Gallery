@@ -7,11 +7,11 @@ export interface CardProps {
     name: string;
     handleCLick?: () => void;
     img: string;
-    arg?: any;
+    classname?: string;
     primary?: boolean;
 }
 
-export const Card: FC<CardProps> = ({ title, name, img, handleCLick, ...args }) => {
+export const Card: FC<CardProps> = ({ title, name, img, classname, handleCLick, ...args }) => {
     return (
         <figure className={styles.card} onClick={handleCLick}>
             <img src={images} alt={title} className={styles.cardImg} />
