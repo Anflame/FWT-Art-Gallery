@@ -1,7 +1,7 @@
 import { FC } from "react";
 import styles from './styles.module.scss';
 import images from '../images/cardImg.jpg';
-import type { CardProps } from "../types";
+import { CardProps } from "../comot-types";
 
 export const Card: FC<CardProps> = ({ title, name, img, classname, handleCLick, ...args }) => {
     return (

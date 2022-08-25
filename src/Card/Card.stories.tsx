@@ -14,7 +14,7 @@ const Template: ComponentStory<typeof Card> = (args) => <Card {...args} />;
 export const Primary = Template.bind({});
 
 Primary.args = {
-  primary: true,
+  isPrimary: true,
   img: img,
   title: 'Jean-Honore Fragonard'
 };
