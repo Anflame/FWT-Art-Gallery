@@ -2,7 +2,7 @@ import { FC, ReactNode } from "react";
 import "./styles.scss";
 import cn from 'classnames';
 
-interface BaseButtonProps<T> {
+interface BaseButtonProps {
     handleClick?: () => void;
     className: string;
     text: ReactNode | string;
@@ -12,11 +12,11 @@ interface BaseButtonProps<T> {
     others?: HTMLButtonElement;
 }
 
-export const Button: FC<BaseButtonProps<HTMLButtonElement>> = ({ handleClick, className, text, isOutlined, isFilled, ...others }) => {
+export const Button: FC<BaseButtonProps> = ({ handleClick, className, text, isOutlined, isFilled, ...others }) => {
   return (
     <button onClick={handleClick}
       disabled={others.isDisabled} 
-      className={cn(className, isOutlined && 'btn_outlined', isFilled && 'btn_filled', others.isDisabled && 'btn_disabled')}
+      className={cn('logInBtn', className, isOutlined && 'btn_outlined', isFilled && 'btn_filled', others.isDisabled && 'btn_disabled')}
         >
         {text}
     </button>
