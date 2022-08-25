@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Card } from "../Card/Card";
-import type { CardProps } from "../types";
+import { CardProps } from "../comon-types";
 import styles from "./styles.module.scss";
 
 type CardListProps = {
