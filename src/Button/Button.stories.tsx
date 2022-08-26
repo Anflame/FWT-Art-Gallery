@@ -14,7 +14,7 @@ export const Primary = Template.bind({});
 
 Primary.args = {
     isDisabled: false,
-    text: '>',    
+    children: '>',    
     className: 'expandBtn',
     isOutlined: true
 
