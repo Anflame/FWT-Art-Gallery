@@ -1,5 +1,5 @@
-import { FC, ReactNode } from "react";
-import "./styles.scss";
+import { FC, ReactNode } from 'react';
+import './styles.scss';
 import cn from 'classnames';
 
 interface BaseButtonProps {
@@ -12,13 +12,27 @@ interface BaseButtonProps {
   args?: HTMLButtonElement;
 }
 
-export const Button: FC<BaseButtonProps> = ({ handleClick, className, children, isOutlined, isFilled, ...args }) => {
+export const Button: FC<BaseButtonProps> = ({
+  handleClick,
+  className,
+  children,
+  isOutlined,
+  isFilled,
+  ...args
+}) => {
   return (
-    <button onClick={ handleClick }
-      disabled={ args.isDisabled } 
-      className={ cn('logInBtn', className, isOutlined && 'btn_outlined', isFilled && 'btn_filled', args.isDisabled && 'btn_disabled') } 
-        >
-        { children }
+    <button
+      onClick={handleClick}
+      disabled={args.isDisabled}
+      className={cn(
+        'comonBtn',
+        className,
+        isOutlined && 'btn_outlined',
+        isFilled && 'btn_filled',
+        args.isDisabled && 'btn_disabled',
+      )}
+    >
+      {children}
     </button>
   );
-}
+};
