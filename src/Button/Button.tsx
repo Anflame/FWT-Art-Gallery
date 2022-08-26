@@ -1,25 +1,38 @@
-import { FC, ReactNode } from "react";
-import "./styles.scss";
+import { FC, ReactNode } from 'react';
+import './styles.scss';
 import cn from 'classnames';
 
+interface BaseButtonProps {
+  handleClick?: () => void;
+  className: string;
+  children: ReactNode;
+  isOutlined?: boolean;
+  isFilled?: boolean;
+  isDisabled?: boolean;
+  args?: HTMLButtonElement;
+}
 
-interface BaseButtonProps<T> {
-    handleClick?: () => void;
-    mixClass: string;
-    children?: ReactNode;
-    text: ReactNode | string;
-    outlined?: boolean;
-    filled?: boolean;
-    disabled?: boolean;
-    others?: HTMLButtonElement;
-}
-export const Button: FC<BaseButtonProps<HTMLButtonElement>> = ({ handleClick, mixClass, children, text, outlined, filled, ...others }) => {
-    return (
-        <button onClick={handleClick}
-            disabled={others.disabled} 
-            className={cn(mixClass, outlined && 'btn_outlined', filled && 'btn_filled', others.disabled && 'btn_disabled')}
-                >
-                {text}
-        </button>
-    );
-}
+export const Button: FC<BaseButtonProps> = ({
+  handleClick,
+  className,
+  children,
+  isOutlined,
+  isFilled,
+  ...args
+}) => {
+  return (
+    <button
+      onClick={handleClick}
+      disabled={args.isDisabled}
+      className={cn(
+        'logInBtn',
+        className,
+        isOutlined && 'btn_outlined',
+        isFilled && 'btn_filled',
+        args.isDisabled && 'btn_disabled',
+      )}
+    >
+      {children}
+    </button>
+  );
+};

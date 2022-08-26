@@ -14,31 +14,36 @@ const Template: ComponentStory<typeof CardList> = (args) => <CardList {...args} 
 export const Primary = Template.bind({});
 
 Primary.args = {
-    painters: [
-        {
-            name: 'Painter',
-            title: 'Painter',
-            img: img
-        },
-        {
-            name: 'Painter',
-            title: 'Painter',
-            img: img
-        },
-        {
-            name: 'Painter',
-            title: 'Painter',
-            img: img
-        },
-        {
-            name: 'Painter',
-            title: 'Painter',
-            img: img
-        },
-        {
-            name: 'Painter',
-            title: 'Painter',
-            img: img
-        }
-    ]
+  painters: [
+    {
+      id: 1,
+      name: 'Painter',
+      title: 'Painter',
+      img: img
+    },
+    {
+      id: 2,
+      name: 'Painter',
+      title: 'Painter',
+      img: img
+    },
+    {
+      id: 3,
+      name: 'Painter',
+      title: 'Painter',
+      img: img
+    },
+    {
+      id: 4,
+      name: 'Painter',
+      title: 'Painter',
+      img: img
+    },
+    {
+      id: 5,
+      name: 'Painter',
+      title: 'Painter',
+      img: img
+    }
+  ]
 };
