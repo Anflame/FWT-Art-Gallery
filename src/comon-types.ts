@@ -4,6 +4,6 @@ export type CardProps = {
   name: string;
   handleCLick?: () => void;
   img: string;
-  classname?: string;
+  className?: string;
   isPrimary?: boolean;
 }
