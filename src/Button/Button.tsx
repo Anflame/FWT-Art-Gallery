@@ -25,7 +25,7 @@ export const Button: FC<BaseButtonProps> = ({
       onClick={handleClick}
       disabled={args.isDisabled}
       className={cn(
-        'logInBtn',
+        'comonBtn',
         className,
         isOutlined && 'btn_outlined',
         isFilled && 'btn_filled',
