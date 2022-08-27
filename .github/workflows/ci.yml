@@ -1,6 +1,6 @@
 name: CI                            
 on:
-branch
+branch:
   pull_request:
     branches: [ master ]      
 jobs:	                
