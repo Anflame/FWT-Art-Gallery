@@ -6,4 +6,4 @@ export type CardProps = {
   img: string;
   className?: string;
   isPrimary?: boolean;
-}
+};
