@@ -3,9 +3,9 @@ import { Card } from '../Card/Card';
 import { CardProps } from '../comon-types';
 import styles from './styles.module.scss';
 
-interface CardListProps {
+type CardListProps = {
   painters: CardProps[];
-}
+};
 
 export const CardList: FC<CardListProps> = ({ painters }) => {
   return (
