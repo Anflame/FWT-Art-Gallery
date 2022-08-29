@@ -1,4 +1,4 @@
-import { FC, ReactNode } from "react";
+import { FC, ReactNode } from 'react';
 import styles from './styles.module.scss';
 
 interface LinksProps {
@@ -7,6 +7,10 @@ interface LinksProps {
   args?: HTMLAnchorElement;
 }
 
-export const Links: FC<LinksProps> = ({ href,children, ...args }) => {
-  return <a className={ styles.link } href={ href }>{ children }</a>;
-}
+export const Links: FC<LinksProps> = ({ href, children, ...args }) => {
+  return (
+    <a className={styles.link} href={href}>
+      {children}
+    </a>
+  );
+};
