@@ -29,7 +29,7 @@ export const Button: FC<BaseButtonProps> = ({
         className,
         isOutlined && 'btn_outlined',
         isFilled && 'btn_filled',
-        args.isDisabled && 'btn_disabled',
+        args.isDisabled && 'btn_disabled'
       )}
     >
       {children}

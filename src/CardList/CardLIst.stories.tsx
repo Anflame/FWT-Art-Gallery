@@ -9,7 +9,9 @@ export default {
   component: CardList,
 } as ComponentMeta<typeof CardList>;
 
-const Template: ComponentStory<typeof CardList> = (args) => <CardList {...args} />;
+const Template: ComponentStory<typeof CardList> = (args) => (
+  <CardList {...args} />
+);
 
 export const Primary = Template.bind({});
 
@@ -19,31 +21,31 @@ Primary.args = {
       id: 1,
       name: 'Painter',
       title: 'Painter',
-      img: img
+      img,
     },
     {
       id: 2,
       name: 'Painter',
       title: 'Painter',
-      img: img
+      img,
     },
     {
       id: 3,
       name: 'Painter',
       title: 'Painter',
-      img: img
+      img,
     },
     {
       id: 4,
       name: 'Painter',
       title: 'Painter',
-      img: img
+      img,
     },
     {
       id: 5,
       name: 'Painter',
       title: 'Painter',
-      img: img
-    }
-  ]
+      img,
+    },
+  ],
 };

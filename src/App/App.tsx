@@ -10,82 +10,76 @@ export const App: FC = () => {
   const [theme, setTheme] = useState(defaultContext.theme);
   const toggleTheme = () => {
     setTheme(theme === 'light' ? 'dark' : 'light');
-};
+  };
   const painters = [
     {
       id: 1,
       name: 'Painter',
-      img: img,
+      img,
       title: 'Painter',
     },
     {
       id: 2,
       name: 'Story',
-      img: img,
+      img,
       title: 'Story',
     },
     {
-    
       id: 3,
       name: 'Story',
-      img: img,
+      img,
       title: 'Story',
     },
     {
-    
       id: 4,
       name: 'Story',
-      img: img,
+      img,
       title: 'Story',
     },
     {
-    
       id: 5,
       name: 'Story',
-      img: img,
+      img,
       title: 'Story',
     },
     {
-    
       id: 6,
       name: 'Story',
-      img: img,
+      img,
       title: 'Story',
     },
     {
       id: 7,
       name: 'Story',
-      img: img,
+      img,
       title: 'Story',
     },
     {
       id: 8,
       name: 'Story',
-      img: img,
+      img,
       title: 'Story',
     },
     {
       id: 9,
       name: 'Story',
-      img: img,
+      img,
       title: 'Story',
-    }
-  ]
-
+    },
+  ];
 
   return (
     <ThemeContext.Provider
-    value={{
-      theme,
-      toggleTheme,
-    }}>
+      value={{
+        theme,
+        toggleTheme,
+      }}
+    >
       <Header />
       <main className={styles.main}>
         <CardList painters={painters} />
       </main>
       <Footer />
-    </ThemeContext.Provider >
+    </ThemeContext.Provider>
   );
-}
-
-export default App;
+};

@@ -5,9 +5,6 @@ module.exports = {
     es2021: true,
     node: true,
   },
-  packageDir: {
-    "import/no-extraneous-dependencies": ["error", { "devDependencies": false, "optionalDependencies": false, "peerDependencies": false }],
-  }, 
   extends: [
     'airbnb-base',
     'eslint-config-airbnb-typescript',
@@ -25,6 +22,16 @@ module.exports = {
   plugins: ['import', 'react', '@typescript-eslint', 'prettier'],
   rules: {
     'react/react-in-jsx-scope': 'off',
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "**/*.stories.*",
+          "**/.storybook/**/*.*"
+        ],
+        "peerDependencies": true
+      }
+    ],
     'import/prefer-default-export': 'off',
     'linebreak-style': ['error', 'unix'],
     'prettier/prettier': [

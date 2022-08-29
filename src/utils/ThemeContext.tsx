@@ -9,4 +9,5 @@ export const defaultContext: ThemeContextType = {
   theme: 'dark',
 };
 
-export const ThemeContext = React.createContext<ThemeContextType>(defaultContext);
+export const ThemeContext =
+  React.createContext<ThemeContextType>(defaultContext);
