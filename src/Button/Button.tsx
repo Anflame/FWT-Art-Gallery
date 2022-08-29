@@ -25,11 +25,19 @@ export const Button: FC<BaseButtonProps> = ({
       onClick={handleClick}
       disabled={args.isDisabled}
       className={cn(
+<<<<<<< HEAD
         'comonBtn',
         className,
         isOutlined && 'btn_outlined',
         isFilled && 'btn_filled',
         args.isDisabled && 'btn_disabled'
+=======
+        'commonBtn',
+        className,
+        isOutlined && 'btn_outlined',
+        isFilled && 'btn_filled',
+        args.isDisabled && 'btn_disabled',
+>>>>>>> master
       )}
     >
       {children}

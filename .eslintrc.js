@@ -22,6 +22,7 @@ module.exports = {
   plugins: ['import', 'react', '@typescript-eslint', 'prettier'],
   rules: {
     'react/react-in-jsx-scope': 'off',
+    'import/prefer-default-export': 'off',
     "import/no-extraneous-dependencies": [
       "error",
       {
@@ -32,7 +33,6 @@ module.exports = {
         "peerDependencies": true
       }
     ],
-    'import/prefer-default-export': 'off',
     'linebreak-style': ['error', 'unix'],
     'prettier/prettier': [
       'error',

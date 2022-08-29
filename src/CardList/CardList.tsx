@@ -10,8 +10,8 @@ type CardListProps = {
 export const CardList: FC<CardListProps> = ({ painters }) => {
   return (
     <ul className={styles.cardList}>
-      {painters.map(({ name, title, img, id }) => (
-        <li className={styles.cardListes} key={id}>
+      {painters.map(({ name, title, id, img }) => (
+        <li className={styles.cardListes}>
           <Card title={title} name={name} img={img} id={id} />
         </li>
       ))}

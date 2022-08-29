@@ -13,8 +13,16 @@ const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 export const Primary = Template.bind({});
 
 Primary.args = {
+<<<<<<< HEAD
   isDisabled: false,
   children: '>',
   className: 'expandBtn',
   isOutlined: true,
 };
+=======
+    isDisabled: false,
+    children: '>',    
+    className: 'expandBtn',
+    isOutlined: true
+};
+>>>>>>> master

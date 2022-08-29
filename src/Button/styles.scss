@@ -1,11 +1,21 @@
+<<<<<<< HEAD
 .comonBtn {
+=======
+.commonBtn {
+>>>>>>> master
   background: none;
   border: none;
 }
 .logInBtn {
+<<<<<<< HEAD
   background-color: var(--color-accent-gold);  // тема
   font-family: var(--font-family-paragraph);
   color: var(--color-primary-white); // тема
+=======
+  background-color: var(--color-accent-gold);  
+  font-family: var(--font-family-paragraph);
+  color: var(--color-primary-white); 
+>>>>>>> master
   text-align: center;
   padding: 16px 74px;
   font-size: 12px;
@@ -14,7 +24,11 @@
   border-radius: 30px;
   cursor: pointer;
   &:hover, &:focus {
+<<<<<<< HEAD
     box-shadow: var(--box-shadow-gold);  // тема
+=======
+    box-shadow: var(--box-shadow-gold);  
+>>>>>>> master
   }
 }
 .linkBtn {
@@ -26,7 +40,11 @@
   background: none;
   cursor: pointer;
   line-height: 15px;
+<<<<<<< HEAD
   color: var(--color-primary-lightGrey);  // тема
+=======
+  color: var(--color-primary-lightGrey);  
+>>>>>>> master
   &:before {
     content: '+';
     display: block;
@@ -37,7 +55,11 @@
     text-decoration: underline;
   }
   &:not(.btn_disabled):hover,&:not(.btn_disabled):focus {
+<<<<<<< HEAD
     color: var(--color-primary-white); // тема
+=======
+    color: var(--color-primary-white); 
+>>>>>>> master
   }
 }
 .deleteBtn {
@@ -45,6 +67,7 @@
   border: none;
   cursor: pointer;
   &:not(.btn_disabled):hover,&:not(.btn_disabled):focus  path {
+<<<<<<< HEAD
       fill: var(--color-primary-lightGrey);  // тема
   }
   &:not(.btn_disabled):hover,&:not(.btn_disabled):focus path {
@@ -53,28 +76,54 @@
 }
 .themeBtn {
   background-color: var(--color-secondary); // тема
+=======
+      fill: var(--color-primary-lightGrey);  
+  }
+  &:not(.btn_disabled):hover,&:not(.btn_disabled):focus path {
+      fill: var(--color-primary-white);  
+  }
+}
+.themeBtn {
+  background-color: var(--color-secondary); 
+>>>>>>> master
   cursor: pointer;
   border: none;
   padding: 10px;
   border-radius: 50%;
   width: 40px;
   & path {
+<<<<<<< HEAD
       fill: var(--color-primary-lightGrey);  // тема
   }
   &:hover path{
       fill: var(--color-secondary-white);  // тема
+=======
+      fill: var(--color-primary-lightGrey);  
+  }
+  &:hover path{
+      fill: var(--color-secondary-white);  
+>>>>>>> master
   }
 }
 .expandBtn {
   transform: rotate(-90deg);
   padding: 25px;
   border-radius: 50%;
+<<<<<<< HEAD
   background-color: var(--color-secondary-black); // тема
   color: var(--color-primary-lightGrey);  // тема
   border: none;
   cursor: pointer;
   &:hover {
       background-color:var(--color-secondary-lightBlack);  // тема
+=======
+  background-color: var(--color-secondary-black); 
+  color: var(--color-primary-lightGrey);  
+  border: none;
+  cursor: pointer;
+  &:hover {
+      background-color:var(--color-secondary-lightBlack);  
+>>>>>>> master
   }
 }
 
@@ -85,9 +134,15 @@
   font-size: 16px;
   font-weight: var(--font-weight-bold);
   text-transform: uppercase;
+<<<<<<< HEAD
   color: var(--color-primary-grey);  // тема
   &:hover {
     color: var(--color-primary-hover); // тема
+=======
+  color: var(--color-primary-grey);  
+  &:hover {
+    color: var(--color-primary-hover); 
+>>>>>>> master
   }
   &:nth-child(2){
     margin-left: 20px;
@@ -98,7 +153,11 @@
   font-size: 80px;
   line-height: 72.66px;
   background: none;
+<<<<<<< HEAD
   color: var(--color-primary-grey);  // тема
+=======
+  color: var(--color-primary-grey);  
+>>>>>>> master
   border: none;
   justify-self: left;
   padding-left: 94px;
