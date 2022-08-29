@@ -15,6 +15,6 @@ export const Primary = Template.bind({});
 
 Primary.args = {
   isPrimary: true,
-  img: img,
-  title: 'Jean-Honore Fragonard'
+  img,
+  title: 'Jean-Honore Fragonard',
 };

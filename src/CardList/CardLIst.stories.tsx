@@ -19,31 +19,31 @@ Primary.args = {
       id: 1,
       name: 'Painter',
       title: 'Painter',
-      img: img
+      img,
     },
     {
       id: 2,
       name: 'Painter',
       title: 'Painter',
-      img: img
+      img,
     },
     {
       id: 3,
       name: 'Painter',
       title: 'Painter',
-      img: img
+      img,
     },
     {
       id: 4,
       name: 'Painter',
       title: 'Painter',
-      img: img
+      img,
     },
     {
       id: 5,
       name: 'Painter',
       title: 'Painter',
-      img: img
-    }
-  ]
+      img,
+    },
+  ],
 };
