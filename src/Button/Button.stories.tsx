@@ -17,5 +17,4 @@ Primary.args = {
     children: '>',    
     className: 'expandBtn',
     isOutlined: true
-
 };
