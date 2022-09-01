@@ -1,4 +1,5 @@
 import { FC, useContext, useLayoutEffect, useState } from 'react';
+import cn from 'classnames/bind';
 import { Button } from '../Button';
 import { ThemeContext } from '../utils/ThemeContext';
 import styles from './styles.module.scss';
@@ -12,6 +13,8 @@ import menuIconClose from './images/menuIconClose.svg';
 import menuIconCloseLight from './images/menuIconCloseLight.svg';
 import { Links } from '../Links';
 
+const cx = cn.bind(styles);
+
 export const Header: FC = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
   useLayoutEffect(() => {
@@ -23,21 +26,21 @@ export const Header: FC = () => {
   const handleClickLogIn = () => {};
   const handleClickSignUp = () => {};
   return (
-    <header className={styles.header}>
-      <div className={styles.container}>
+    <header className={cx('header')}>
+      <div className={cx('container')}>
         <Links
           children={
             <img
               src={theme === 'dark' ? logoImg : logoImgLight}
               alt="logo"
-              className={styles.logo}
+              className={cx('logo')}
             />
           }
           href={'/'}
         />
 
-        <div className={styles.authAndChangeThemeWrapp}>
-          <div className={styles.authWrapp}>
+        <div className={cx('authAndChangeThemeWrapp')}>
+          <div className={cx('authWrapp')}>
             <Button
               handleClick={handleClickLogIn}
               className={'authBtn'}
@@ -65,7 +68,7 @@ export const Header: FC = () => {
           <img
             src={menuIcon}
             alt="menuIcon"
-            className={styles.menuIcon}
+            className={cx('menuIcon')}
             onClick={() => setShow(!show)}
           />
         )}
@@ -73,17 +76,17 @@ export const Header: FC = () => {
           <img
             src={menuIconLight}
             alt="menuIconLight"
-            className={styles.menuIcon}
+            className={cx('menuIcon')}
             onClick={() => setShow(!show)}
           />
         )}
         {show && (
-          <div className={styles.menu}>
-            <div className={styles.menuPopUpContent}>
+          <div className={cx('menu')}>
+            <div className={cx('menuPopUpContent')}>
               {show && theme === 'dark' && (
                 <img
                   src={menuIconClose}
-                  className={styles.menuIconClose}
+                  className={cx('menuIconClose')}
                   alt="menuIconClose"
                   onClick={() => setShow(!show)}
                 />
@@ -91,12 +94,12 @@ export const Header: FC = () => {
               {show && theme === 'light' && (
                 <img
                   src={menuIconCloseLight}
-                  className={styles.menuIconClose}
+                  className={cx('menuIconClose')}
                   alt="menuIconCloseLight"
                   onClick={() => setShow(!show)}
                 />
               )}
-              <div className={styles.menuThemeWrapp} onClick={toggleTheme}>
+              <div className={cx('menuThemeWrapp')} onClick={toggleTheme}>
                 <Button
                   className={'themeBtn'}
                   children={
@@ -107,7 +110,7 @@ export const Header: FC = () => {
                     )
                   }
                 />
-                <p className={styles.menuThemeMode}>
+                <p className={cx('menuThemeMode')}>
                   {theme === 'dark' ? 'light mode' : 'dark mode'}
                 </p>
               </div>

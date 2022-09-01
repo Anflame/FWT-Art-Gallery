@@ -2,6 +2,7 @@
   background: none;
   border: none;
 }
+
 .logInBtn {
   background-color: var(--color-accent-gold);  
   font-family: var(--font-family-paragraph);
@@ -13,10 +14,12 @@
   text-transform: uppercase;
   border-radius: 30px;
   cursor: pointer;
+  
   &:hover, &:focus {
     box-shadow: var(--box-shadow-gold); 
   }
 }
+
 .linkBtn {
   border: none;
   text-transform: uppercase;
@@ -27,30 +30,37 @@
   cursor: pointer;
   line-height: 15px;
   color: var(--color-primary-lightGrey); 
+
   &:before {
     content: '+';
     display: block;
     margin-right: 12px;
     float: left;
   }
+
   & > span {
     text-decoration: underline;
   }
+
   &:not(.btn_disabled):hover,&:not(.btn_disabled):focus {
     color: var(--color-primary-white); 
   }
 }
+
 .deleteBtn {
   background: none;
   border: none;
   cursor: pointer;
+
   &:not(.btn_disabled):hover,&:not(.btn_disabled):focus  path {
       fill: var(--color-primary-lightGrey);  
   }
+
   &:not(.btn_disabled):hover,&:not(.btn_disabled):focus path {
       fill: var(--color-primary-white);  
   }
 }
+
 .themeBtn {
   background-color: var(--color-secondary); 
   cursor: pointer;
@@ -58,13 +68,16 @@
   padding: 10px;
   border-radius: 50%;
   width: 40px;
+
   & path {
       fill: var(--color-primary-lightGrey);  
   }
+
   &:hover path{
       fill: var(--color-secondary-white); 
   }
 }
+
 .expandBtn {
   transform: rotate(-90deg);
   padding: 25px;
@@ -82,14 +95,17 @@
   font-size: 16px;
   font-weight: var(--font-weight-bold);
   text-transform: uppercase;
-  color: var(--color-primary-grey);  
+  color: var(--color-primary-grey); 
+
   &:hover {
     color: var(--color-primary-hover); 
   }
+
   &:nth-child(2){
     margin-left: 20px;
   }
 }
+
 .authBtnMobile {
   font-family: var(--font-family-heading);
   font-size: 80px;
@@ -99,6 +115,7 @@
   border: none;
   justify-self: left;
   padding-left: 94px;
+  
   @media(max-width: 550px){
     font-size: 32px;
     line-height: 100%;
@@ -109,6 +126,7 @@
 .authBtnMobile:first-child {
   margin-bottom: 40px;
 }
+
 .btn_disabled {
   opacity: 0.5;
   cursor: default;

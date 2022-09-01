@@ -1,5 +1,8 @@
 import { FC, ReactNode } from 'react';
+import cn from 'classnames/bind';
 import styles from './styles.module.scss';
+
+const cx = cn.bind(styles);
 
 interface LinksProps {
   href: string;
@@ -9,7 +12,7 @@ interface LinksProps {
 
 export const Links: FC<LinksProps> = ({ href, children, ...args }) => {
   return (
-    <a className={styles.link} href={href}>
+    <a className={cx('link')} href={href}>
       {children}
     </a>
   );

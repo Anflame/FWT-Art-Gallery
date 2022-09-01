@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Card } from './Card';
+import { Card } from '../Card/Card';
 import img from '../images/cardImg.jpg';
 
 export default {

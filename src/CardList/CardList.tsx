@@ -1,7 +1,10 @@
 import { FC } from 'react';
+import cn from 'classnames/bind';
 import { Card } from '../Card/Card';
 import { CardProps } from '../comon-types';
 import styles from './styles.module.scss';
+
+const cx = cn.bind(styles);
 
 type CardListProps = {
   painters: CardProps[];
@@ -9,9 +12,9 @@ type CardListProps = {
 
 export const CardList: FC<CardListProps> = ({ painters }) => {
   return (
-    <ul className={styles.cardList}>
+    <ul className={cx('cardList')}>
       {painters.map(({ name, title, id, img }) => (
-        <li className={styles.cardListes}>
+        <li className={cx('cardListes')} key={id}>
           <Card title={title} name={name} img={img} id={id} />
         </li>
       ))}
