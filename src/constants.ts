@@ -1,4 +1,4 @@
-import img from './images/cardImg.jpg';
+import img from './assets/images/cardImg.jpg';
 
 export const painters = [
   {
@@ -54,5 +54,23 @@ export const painters = [
     name: 'Story',
     img,
     title: 'Story',
+  },
+];
+
+export const socNetworks = [
+  {
+    id: 1,
+    title: 'facebook',
+    href: 'https://facebook.com/framework.team/',
+  },
+  {
+    id: 2,
+    title: 'vk',
+    href: 'https://vk.com/frameworkteam',
+  },
+  {
+    id: 3,
+    title: 'instagram',
+    href: 'https://www.instagram.com/framework.team/',
   },
 ];

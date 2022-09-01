@@ -10,10 +10,8 @@ interface LinksProps {
   args?: HTMLAnchorElement;
 }
 
-export const Links: FC<LinksProps> = ({ href, children, ...args }) => {
-  return (
-    <a className={cx('link')} href={href}>
-      {children}
-    </a>
-  );
-};
+export const Links: FC<LinksProps> = ({ href, children, ...args }) => (
+  <a className={cx('link')} href={href}>
+    {children}
+  </a>
+);

@@ -21,20 +21,18 @@ export const Button: FC<BaseButtonProps> = ({
   isOutlined,
   isFilled,
   ...args
-}) => {
-  return (
-    <button
-      onClick={handleClick}
-      disabled={args.isDisabled}
-      className={cx(
-        'commonBtn',
-        className,
-        isOutlined && 'btn_outlined',
-        isFilled && 'btn_filled',
-        args.isDisabled && 'btn_disabled'
-      )}
-    >
-      {children}
-    </button>
-  );
-};
+}) => (
+  <button
+    onClick={handleClick}
+    disabled={args.isDisabled}
+    className={cx(
+      'commonBtn',
+      className,
+      isOutlined && 'btn_outlined',
+      isFilled && 'btn_filled',
+      args.isDisabled && 'btn_disabled'
+    )}
+  >
+    {children}
+  </button>
+);
