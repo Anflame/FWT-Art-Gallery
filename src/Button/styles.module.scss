@@ -4,7 +4,7 @@
 }
 
 .logInBtn {
-  background-color: var(--color-accent-gold);  
+  background-color: var(--color-logIn-background-btn);  
   font-family: var(--font-family-paragraph);
   color: var(--color-primary-white);
   text-align: center;
@@ -14,9 +14,11 @@
   text-transform: uppercase;
   border-radius: 30px;
   cursor: pointer;
+  display: block;
+  margin: 0 auto;
   
   &:hover, &:focus {
-    box-shadow: var(--box-shadow-gold); 
+    box-shadow: var(--color-boxShadow-logIn-btn); 
   }
 }
 
@@ -29,7 +31,8 @@
   background: none;
   cursor: pointer;
   line-height: 15px;
-  color: var(--color-primary-lightGrey); 
+  color: var(--color-primary-grey); 
+  text-decoration: underline;
 
   &:before {
     content: '+';
@@ -43,7 +46,7 @@
   }
 
   &:not(.btn_disabled):hover,&:not(.btn_disabled):focus {
-    color: var(--color-primary-white); 
+    color: var(--color-primary-hover); 
   }
 }
 
@@ -53,11 +56,11 @@
   cursor: pointer;
 
   &:not(.btn_disabled):hover,&:not(.btn_disabled):focus  path {
-      fill: var(--color-primary-lightGrey);  
+      fill: var(--color-primary-grey);  
   }
 
   &:not(.btn_disabled):hover,&:not(.btn_disabled):focus path {
-      fill: var(--color-primary-white);  
+      fill: var(--color-primary-hover);  
   }
 }
 
@@ -69,22 +72,18 @@
   border-radius: 50%;
   width: 40px;
 
-  & path {
-      fill: var(--color-primary-lightGrey);  
-  }
-
-  &:hover path{
-      fill: var(--color-secondary-white); 
+  &:hover path {
+    fill: var(--color-primary-hover);
   }
 }
 
 .expandBtn {
   transform: rotate(-90deg);
-  padding: 25px;
+  padding: 25px 26px;
   border-radius: 50%;
-  background-color: var(--color-secondary-black); 
-  color: var(--color-primary-lightGrey);  
-  border: none;
+  background-color: var(--color-secondary); 
+  border: 1px solid var(--color-inputs-border);
+  color: var(--color-primary-grey);
   cursor: pointer;
 }
 

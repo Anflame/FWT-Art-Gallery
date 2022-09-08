@@ -2,15 +2,10 @@ import { FC, useContext, useLayoutEffect, useState } from 'react';
 import cn from 'classnames/bind';
 import { ThemeContext } from '../utils/ThemeContext';
 import styles from './styles.module.scss';
-import themeIcon from '../assets/images/themeIcon.svg';
-import themeIconLight from '../assets/images/themeIconLight.svg';
-import logoImg from '../assets/images/logo.svg';
-import logoImgLight from '../assets/images/logoLight.svg';
-import menuIcon from '../assets/images/menuIcon.svg';
-import menuIconLight from '../assets/images/menuIconLight.svg';
 import Menu from '../Menu';
 import Button from '../Button';
 import Links from '../Links';
+import { Logo, MenuIcon, ThemeIcon, ThemeIconLight } from '../assets/icons';
 
 const cx = cn.bind(styles);
 
@@ -30,10 +25,10 @@ export const Header: FC = () => {
       <div className={cx('container')}>
         <Links
           children={
-            <img
-              src={theme === 'dark' ? logoImg : logoImgLight}
-              alt="logo"
-              className={cx('logo')}
+            <Logo
+              fill={theme === 'dark' ? '#DEDEDE' : '#575757'}
+              width={39}
+              height={15}
             />
           }
           href={'/'}
@@ -57,17 +52,18 @@ export const Header: FC = () => {
             className={'themeBtn'}
             children={
               theme === 'dark' ? (
-                <img src={themeIcon} alt="theme" />
+                <ThemeIcon width={20} height={20} fill="#DEDEDE" />
               ) : (
-                <img src={themeIconLight} alt="theme" />
+                <ThemeIconLight width={18} height={21} fill="#575757" />
               )
             }
           />
         </div>
         {!isShow ? (
-          <img
-            src={theme === 'dark' ? menuIcon : menuIconLight}
-            alt="menuIcon"
+          <MenuIcon
+            width={24}
+            height={18}
+            fill={theme === 'dark' ? '#DEDEDE' : '#575757'}
             className={cx('menuIcon')}
             onClick={() => setIsShow(!isShow)}
           />

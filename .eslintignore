@@ -2,3 +2,4 @@
 .eslintrc.js
 prettier.config.js
 src/stories/**
+tsconfig.json
