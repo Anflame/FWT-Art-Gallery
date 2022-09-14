@@ -4,10 +4,12 @@
   width: inherit;
   height: inherit;
   cursor: pointer;
+  overflow: hidden;
 
   .cardImg {
     display: block;
     width: 100%;
+    transition: 1s;
   }
 
   .cardInfoWrapp {
@@ -49,12 +51,8 @@
     }
   }
 
-  &:hover .cardInfoAfter {
-    background-color: var(--color-accent);
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  &:hover .cardImg {
+    transform: scale(1.3);
   }
 
   .cardInfoWrapp::before {
@@ -66,10 +64,6 @@
     width: 2px;
     height: 60%;
     background-color: var(--color-accent);
-  }
-
-  &:hover .cardInfoWrapp::before {
-    display: none;
   }
 
   @media (max-width: 768px) {
