@@ -30,6 +30,7 @@
     margin-right: 0;
   }
 }
+
 .menuPopUpContent {
   display: none;
   background-color: var(--color-primary);
@@ -63,6 +64,7 @@
         color: var(--color-primary-grey);
         text-transform: uppercase;
         text-decoration: underline;
+        margin-left: 12px;
         font-size: 12px;
         line-height: 15px;
     }
