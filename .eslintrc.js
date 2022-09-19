@@ -39,11 +39,11 @@ module.exports = {
         "groups": [
           ["^react",
           "^@?\\w",
-          "^[A-Z]{1}[a-zA-Z]+$",
-          "comon-types$",
+          "[A-Z]{1}[a-zA-Z]+$",
           "^\\./(?=.*/)(?!/?$)",
           "^\\.(?!/?$)",
           "constants$",
+          "comon-types$",
           "(jpg|jpeg|png|svg)$",
             "^.+\\.?(css)$"],
         ]

@@ -1,9 +1,9 @@
-import { FC, useContext, useLayoutEffect, useState } from 'react';
+import { FC, useContext, useLayoutEffect } from 'react';
 import cn from 'classnames/bind';
 import Button from '../Button';
 import Links from '../Links';
-import Menu from '../Menu';
 import { ThemeContext } from '../utils/ThemeContext';
+import type { MenuProps } from '../comon-types';
 import { ReactComponent as Logo } from '../assets/images/logo.svg';
 import { ReactComponent as MenuIcon } from '../assets/images/menuIcon.svg';
 import { ReactComponent as ThemeIcon } from '../assets/images/themeIcon.svg';
@@ -12,16 +12,16 @@ import styles from './styles.module.scss';
 
 const cx = cn.bind(styles);
 
-export const Header: FC = () => {
+export const Header: FC<MenuProps> = ({
+  handleClickLogIn,
+  handleClickSignUp,
+  setIsShow,
+  isShow,
+}) => {
   const { theme, toggleTheme } = useContext(ThemeContext);
   useLayoutEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
   }, [theme]);
-
-  const handleClickLogIn = () => {};
-  const handleClickSignUp = () => {};
-
-  const [isShow, setIsShow] = useState(false);
 
   return (
     <header className={cx('header')}>
@@ -56,20 +56,13 @@ export const Header: FC = () => {
             }
           />
         </div>
-        {!isShow ? (
+        <>
           <MenuIcon
             fill={theme === 'dark' ? '#DEDEDE' : '#575757'}
             className={cx('menuIcon')}
             onClick={() => setIsShow(!isShow)}
           />
-        ) : (
-          <Menu
-            isShow={isShow}
-            setIsShow={setIsShow}
-            handleClickLogIn={handleClickLogIn}
-            handleClickSignUp={handleClickSignUp}
-          />
-        )}
+        </>
       </div>
     </header>
   );

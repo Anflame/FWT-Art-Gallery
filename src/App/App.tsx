@@ -3,6 +3,7 @@ import cn from 'classnames/bind';
 import CardList from '../CardList';
 import Footer from '../Footer';
 import Header from '../Header';
+import Menu from '../Menu';
 import { defaultContext, ThemeContext } from '../utils/ThemeContext';
 import { painters } from '../constants';
 import styles from './styles.module.scss';
@@ -15,6 +16,11 @@ export const App: FC = () => {
     setTheme(theme === 'light' ? 'dark' : 'light');
   };
 
+  const handleClickLogIn = () => {};
+  const handleClickSignUp = () => {};
+
+  const [isShow, setIsShow] = useState(false);
+
   return (
     <ThemeContext.Provider
       value={{
@@ -22,7 +28,18 @@ export const App: FC = () => {
         toggleTheme,
       }}
     >
-      <Header />
+      <Menu
+        isShow={isShow}
+        setIsShow={setIsShow}
+        handleClickLogIn={handleClickLogIn}
+        handleClickSignUp={handleClickSignUp}
+      />
+      <Header
+        isShow={isShow}
+        setIsShow={setIsShow}
+        handleClickLogIn={handleClickLogIn}
+        handleClickSignUp={handleClickSignUp}
+      />
       <main className={cx('main')}>
         <CardList painters={painters} />
       </main>

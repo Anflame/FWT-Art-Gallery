@@ -6,6 +6,13 @@ export type CardProps = {
   isPrimary?: boolean;
 };
 
+export type MenuProps = {
+  isShow: boolean;
+  setIsShow: (isShow: boolean) => void;
+  handleClickLogIn: () => void;
+  handleClickSignUp: () => void;
+};
+
 export type InputsProps = {
   isError: boolean;
   id?: string;
