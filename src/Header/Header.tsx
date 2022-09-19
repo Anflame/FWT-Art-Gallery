@@ -1,14 +1,14 @@
 import { FC, useContext, useLayoutEffect, useState } from 'react';
 import cn from 'classnames/bind';
-import { ThemeContext } from '../utils/ThemeContext';
-import styles from './styles.module.scss';
-import Menu from '../Menu';
 import Button from '../Button';
 import Links from '../Links';
+import Menu from '../Menu';
+import { ThemeContext } from '../utils/ThemeContext';
 import { ReactComponent as Logo } from '../assets/images/logo.svg';
+import { ReactComponent as MenuIcon } from '../assets/images/menuIcon.svg';
 import { ReactComponent as ThemeIcon } from '../assets/images/themeIcon.svg';
 import { ReactComponent as ThemeIconLight } from '../assets/images/themeIconLight.svg';
-import { ReactComponent as MenuIcon } from '../assets/images/menuIcon.svg';
+import styles from './styles.module.scss';
 
 const cx = cn.bind(styles);
 

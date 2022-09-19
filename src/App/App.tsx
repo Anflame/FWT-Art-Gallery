@@ -1,11 +1,11 @@
 import React, { FC, useState } from 'react';
 import cn from 'classnames/bind';
-import styles from './styles.module.scss';
-import { defaultContext, ThemeContext } from '../utils/ThemeContext';
-import { painters } from '../constants';
+import CardList from '../CardList';
 import Footer from '../Footer';
 import Header from '../Header';
-import CardList from '../CardList';
+import { defaultContext, ThemeContext } from '../utils/ThemeContext';
+import { painters } from '../constants';
+import styles from './styles.module.scss';
 
 const cx = cn.bind(styles);
 

@@ -1,5 +1,5 @@
-import cn from 'classnames/bind';
 import { FC, ReactNode } from 'react';
+import cn from 'classnames/bind';
 import styles from './styles.module.scss';
 
 const cx = cn.bind(styles);
@@ -30,7 +30,7 @@ export const Button: FC<BaseButtonProps> = ({
       className,
       isOutlined && 'btn_outlined',
       isFilled && 'btn_filled',
-      args.isDisabled && 'btn_disabled'
+      args.isDisabled && 'btn_disabled',
     )}
   >
     {children}
