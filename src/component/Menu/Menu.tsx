@@ -1,11 +1,11 @@
 import { FC, useContext } from 'react';
 import cn from 'classnames/bind';
+import { ThemeContext } from '../../utils/ThemeContext';
 import Button from '../Button';
-import { ThemeContext } from '../utils/ThemeContext';
-import type { MenuProps } from '../comon-types';
-import { ReactComponent as MenuIconClose } from '../assets/images/menuIconClose.svg';
-import { ReactComponent as ThemeIcon } from '../assets/images/themeIcon.svg';
-import { ReactComponent as ThemeIconLight } from '../assets/images/themeIconLight.svg';
+import type { MenuProps } from '../../comon-types';
+import { ReactComponent as MenuIconClose } from '../../assets/images/menuIconClose.svg';
+import { ReactComponent as ThemeIcon } from '../../assets/images/themeIcon.svg';
+import { ReactComponent as ThemeIconLight } from '../../assets/images/themeIconLight.svg';
 import styles from './styles.module.scss';
 
 const cx = cn.bind(styles);
