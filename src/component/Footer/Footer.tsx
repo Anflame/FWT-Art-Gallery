@@ -1,10 +1,10 @@
 import { FC, useContext } from 'react';
 import cn from 'classnames/bind';
+import { ThemeContext } from '../../utils/ThemeContext';
 import Links from '../Links';
-import { ThemeContext } from '../utils/ThemeContext';
-import { ReactComponent as Facebook } from '../assets/images/facebook.svg';
-import { ReactComponent as Instagram } from '../assets/images/instagram.svg';
-import { ReactComponent as Vk } from '../assets/images/vk.svg';
+import { ReactComponent as Facebook } from '../../assets/images/facebook.svg';
+import { ReactComponent as Instagram } from '../../assets/images/instagram.svg';
+import { ReactComponent as Vk } from '../../assets/images/vk.svg';
 import styles from './styles.module.scss';
 
 const cx = cn.bind(styles);

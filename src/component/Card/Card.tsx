@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import cn from 'classnames/bind';
-import type { CardProps } from '../comon-types';
-import { ReactComponent as Arrow } from '../assets/images/arrow.svg';
-import images from '../assets/images/cardImg.jpg';
+import type { CardProps } from '../../comon-types';
+import { ReactComponent as Arrow } from '../../assets/images/arrow.svg';
+import images from '../../assets/images/cardImg.jpg';
 import styles from './styles.module.scss';
 
 const cx = cn.bind(styles);
