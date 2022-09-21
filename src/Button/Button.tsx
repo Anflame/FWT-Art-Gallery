@@ -1,16 +1,18 @@
 import { FC, ReactNode } from 'react';
-import './styles.scss';
-import cn from 'classnames';
+import cn from 'classnames/bind';
+import styles from './styles.module.scss';
 
-interface BaseButtonProps {
+const cx = cn.bind(styles);
+
+type BaseButtonProps = {
   handleClick?: () => void;
-  className: string;
+  className?: string;
   children: ReactNode;
   isOutlined?: boolean;
   isFilled?: boolean;
   isDisabled?: boolean;
   args?: HTMLButtonElement;
-}
+};
 
 export const Button: FC<BaseButtonProps> = ({
   handleClick,
@@ -19,20 +21,18 @@ export const Button: FC<BaseButtonProps> = ({
   isOutlined,
   isFilled,
   ...args
-}) => {
-  return (
-    <button
-      onClick={handleClick}
-      disabled={args.isDisabled}
-      className={cn(
-        'commonBtn',
-        className,
-        isOutlined && 'btn_outlined',
-        isFilled && 'btn_filled',
-        args.isDisabled && 'btn_disabled',
-      )}
-    >
-      {children}
-    </button>
-  );
-};
+}) => (
+  <button
+    onClick={handleClick}
+    disabled={args.isDisabled}
+    className={cx(
+      'commonBtn',
+      className,
+      isOutlined && 'btn_outlined',
+      isFilled && 'btn_filled',
+      args.isDisabled && 'btn_disabled',
+    )}
+  >
+    {children}
+  </button>
+);

@@ -19,7 +19,7 @@ module.exports = {
     sourceType: 'module',
     project: 'tsconfig.json',
   },
-  plugins: ['import', 'react', '@typescript-eslint', 'prettier'],
+  plugins: ['import', 'react', '@typescript-eslint', 'simple-import-sort', 'prettier'],
   rules: {
     'react/react-in-jsx-scope': 'off',
     'import/prefer-default-export': 'off',
@@ -33,11 +33,32 @@ module.exports = {
         "peerDependencies": true
       }
     ],
-    'linebreak-style': ['error', 'unix'],
+    "simple-import-sort/imports": [
+      "error",
+      {
+        "groups": [
+          ["^react",
+          "^@?\\w",
+          "[A-Z]{1}[a-zA-Z]+$",
+          "^\\./(?=.*/)(?!/?$)",
+          "^\\.(?!/?$)",
+          "constants$",
+          "comon-types$",
+          "(jpg|jpeg|png|svg)$",
+            "^.+\\.?(css)$"],
+        ]
+      }
+    ],
+    "simple-import-sort/exports": "error",
+    "import/first": "error",
+    "import/newline-after-import": "error",
+    "import/no-duplicates": "error",
+    "linebreak-style": ["error", "unix"],
     'prettier/prettier': [
       'error',
       {
         singleQuote: true,
+        printWidth: 80,
       },
     ],
     quotes: ['warn', 'single'],
