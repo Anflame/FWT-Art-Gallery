@@ -19,11 +19,12 @@ module.exports = {
     sourceType: 'module',
     project: 'tsconfig.json',
   },
-  plugins: ['import', 'react', '@typescript-eslint', 'simple-import-sort', 'prettier'],
+  plugins: ['import', 'react', '@typescript-eslint', 'simple-import-sort' , 'prettier'],
   rules: {
     'react/react-in-jsx-scope': 'off',
     'import/prefer-default-export': 'off',
-    "import/no-extraneous-dependencies": [
+    'no-param-reassign': ["error", { "props": false }],
+    'import/no-extraneous-dependencies': [
       "error",
       {
         "devDependencies": [
@@ -37,13 +38,11 @@ module.exports = {
       "error",
       {
         "groups": [
-          ["^react",
+          ["^react|^react-redux$",
           "^@?\\w",
-          "[A-Z]{1}[a-zA-Z]+$",
-          "^\\./(?=.*/)(?!/?$)",
-          "^\\.(?!/?$)",
-          "constants$",
-          "comon-types$",
+          "^(\\.\\.\\/)+[A-Z]{1}[a-zA-Z]+$",
+            "^\\.(?!/?$)",
+          "^(\\.\\.\\/)*\\w+(-)?types\\u0000$",
           "(jpg|jpeg|png|svg)$",
             "^.+\\.?(css)$"],
         ]

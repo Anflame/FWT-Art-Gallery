@@ -1,8 +1,10 @@
-import { FC, useContext, useLayoutEffect } from 'react';
+import { FC, useLayoutEffect } from 'react';
+import { useCookies } from 'react-cookie';
 import cn from 'classnames/bind';
-import { ThemeContext } from '../../utils/ThemeContext';
 import Button from '../Button';
 import Links from '../Links';
+import { useAppDispatch } from '../../hooks/Redux';
+import { toggleTheme } from '../../store/theme/slice';
 import type { MenuProps } from '../../comon-types';
 import { ReactComponent as Logo } from '../../assets/images/logo.svg';
 import { ReactComponent as MenuIcon } from '../../assets/images/menuIcon.svg';
@@ -18,16 +20,28 @@ export const Header: FC<MenuProps> = ({
   setIsShow,
   isShow,
 }) => {
-  const { theme, toggleTheme } = useContext(ThemeContext);
+  const dispatch = useAppDispatch();
+  const [{ theme }, setCookie] = useCookies(['theme']);
+  const toChangeTheme = theme === 'dark' ? 'light' : 'dark';
+  const resultTheme = theme || 'dark';
+
   useLayoutEffect(() => {
+    if (!theme) setCookie('theme', toChangeTheme);
     document.documentElement.setAttribute('data-theme', theme);
   }, [theme]);
+
+  const changeTheme = () => {
+    dispatch(toggleTheme(toChangeTheme));
+    setCookie('theme', toChangeTheme);
+  };
 
   return (
     <header className={cx('header')}>
       <div className={cx('container')}>
         <Links
-          children={<Logo fill={theme === 'dark' ? '#DEDEDE' : '#575757'} />}
+          children={
+            <Logo fill={resultTheme === 'dark' ? '#DEDEDE' : '#575757'} />
+          }
           href={'/'}
         />
 
@@ -45,10 +59,10 @@ export const Header: FC<MenuProps> = ({
             ></Button>
           </div>
           <Button
-            handleClick={toggleTheme}
+            handleClick={changeTheme}
             className={'themeBtn'}
             children={
-              theme === 'dark' ? (
+              resultTheme === 'dark' ? (
                 <ThemeIcon fill="#DEDEDE" />
               ) : (
                 <ThemeIconLight fill="#575757" />
@@ -58,7 +72,7 @@ export const Header: FC<MenuProps> = ({
         </div>
         <>
           <MenuIcon
-            fill={theme === 'dark' ? '#DEDEDE' : '#575757'}
+            fill={resultTheme === 'dark' ? '#DEDEDE' : '#575757'}
             className={cx('menuIcon')}
             onClick={() => setIsShow(!isShow)}
           />
