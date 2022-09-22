@@ -38,7 +38,7 @@ module.exports = {
       "error",
       {
         "groups": [
-          ["^react|^react-redux$",
+          ["^react",
           "^@?\\w",
           "^(\\.\\.\\/)+[A-Z]{1}[a-zA-Z]+$",
             "^\\.(?!/?$)",
