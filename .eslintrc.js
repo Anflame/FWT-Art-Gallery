@@ -19,7 +19,7 @@ module.exports = {
     sourceType: 'module',
     project: 'tsconfig.json',
   },
-  plugins: ['import', 'react', '@typescript-eslint', 'simple-import-sort' , 'prettier'],
+  plugins: ['import', 'react', '@typescript-eslint', 'simple-import-sort', 'prettier'],
   rules: {
     'react/react-in-jsx-scope': 'off',
     'import/prefer-default-export': 'off',
