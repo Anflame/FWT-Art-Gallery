@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useEffect, useRef } from 'react';
 import cn from 'classnames/bind';
 import Button from '../Button';
 import { Context } from '../../hooks/Context';
@@ -17,9 +17,27 @@ export const Menu: FC<MenuProps> = ({
   handleClickSignUp,
 }) => {
   const { theme, toggleTheme } = Context();
+  const menuContentRef = useRef<HTMLDivElement>(null);
+
+  const handleClick = (e: React.BaseSyntheticEvent<MouseEvent, Node>) => {
+    if (!menuContentRef.current) return;
+    if (!menuContentRef.current.contains(e.target)) setIsShow(false);
+  };
+
+  useEffect(() => {
+    if (isShow) return;
+    document.addEventListener('click', () => handleClick);
+  }, [isShow]);
+
   return (
-    <div className={cx('menu', isShow && 'menuShow')}>
-      <div className={cx('menuPopUpContent', isShow && 'menuPopUpContentShow')}>
+    <div
+      className={cx('menu', isShow && 'menuShow')}
+      onClick={() => setIsShow(false)}
+    >
+      <div
+        className={cx('menuPopUpContent', isShow && 'menuPopUpContentShow')}
+        ref={menuContentRef}
+      >
         <MenuIconClose
           fill={theme === 'dark' ? '#DEDEDE' : '#575757'}
           onClick={() => setIsShow(!isShow)}

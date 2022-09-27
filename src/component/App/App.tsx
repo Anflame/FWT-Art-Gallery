@@ -31,22 +31,22 @@ export const App: FC = () => {
         toggleTheme,
       }}
     >
-      <Menu
-        isShow={isShow}
-        setIsShow={setIsShow}
-        handleClickLogIn={handleClickLogIn}
-        handleClickSignUp={handleClickSignUp}
-      />
       <Header
         isShow={isShow}
         setIsShow={setIsShow}
         handleClickLogIn={handleClickLogIn}
         handleClickSignUp={handleClickSignUp}
       />
-      <main className={cx('main')}>
+      <main className={cx('main', isShow && 'menuShow')}>
         <CardList painters={painters} />
       </main>
       <Footer />
+      <Menu
+        isShow={isShow}
+        setIsShow={setIsShow}
+        handleClickLogIn={handleClickLogIn}
+        handleClickSignUp={handleClickSignUp}
+      />
     </ThemeContext.Provider>
   );
 };
