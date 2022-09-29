@@ -6,13 +6,14 @@
   height: 100vh;
   top: 0;
   right: 0;
-  z-index: 0;
+  z-index: 3;
+  pointer-events: none;
   text-align: right;
-  transition: background-color 1s, z-index 1s ease-out;
+  transition: background-color 1s ease-out;
 }
 .menu.menuShow {
   background-color: rgba(3,3,3,.6);
-  z-index: 3;
+  pointer-events:all; 
 }
 
 .menuPopUpContent {

@@ -1,7 +1,6 @@
-import { FC, useRef } from 'react';
+import { FC } from 'react';
 import cn from 'classnames/bind';
 import Button from '../Button';
-import { clickOutSideElement } from '../../hooks/ClickOutSideElement';
 import { Context } from '../../hooks/Context';
 import type { MenuProps } from '../../comon-types';
 import { ReactComponent as MenuIconClose } from '../../assets/images/menuIconClose.svg';
@@ -18,14 +17,14 @@ export const Menu: FC<MenuProps> = ({
   handleClickSignUp,
 }) => {
   const { theme, toggleTheme } = Context();
-  const menuContentRef = useRef<HTMLDivElement>(null);
-  const handleClick = clickOutSideElement(menuContentRef, setIsShow);
-
   return (
-    <div className={cx('menu', isShow && 'menuShow')} onClick={handleClick}>
+    <div
+      className={cx('menu', isShow && 'menuShow')}
+      onClick={() => setIsShow(!isShow)}
+    >
       <div
         className={cx('menuPopUpContent', isShow && 'menuPopUpContentShow')}
-        ref={menuContentRef}
+        onClick={(e) => e.stopPropagation()}
       >
         <MenuIconClose
           fill={theme === 'dark' ? '#DEDEDE' : '#575757'}
