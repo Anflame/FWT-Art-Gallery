@@ -12,12 +12,12 @@ import styles from './styles.module.scss';
 const cx = cn.bind(styles);
 
 export const App: FC = () => {
-  const { painters } = useAppSelector((state) => state.painters);
+  const { painterList } = useAppSelector(({ painters }) => painters);
   const [theme, setTheme] = useState(defaultContext.theme);
   const toggleTheme = () => {
     const resultTheme = theme === 'dark' ? 'light' : 'dark';
     setTheme(resultTheme);
-    Cookies.set('theme', resultTheme, { expires: 7 });
+    Cookies.set('theme', resultTheme);
   };
   const handleClickLogIn = () => {};
   const handleClickSignUp = () => {};
@@ -38,7 +38,7 @@ export const App: FC = () => {
         handleClickSignUp={handleClickSignUp}
       />
       <main className={cx('main', isShow && 'menuShow')}>
-        <CardList painters={painters} />
+        <CardList painters={painterList} />
       </main>
       <Footer />
       <Menu

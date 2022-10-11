@@ -3,11 +3,11 @@ import { CardProps } from '../../comon-types';
 import img from '../../assets/images/cardImg.jpg';
 
 type PaintersState = {
-  painters: CardProps[];
+  painterList: CardProps[];
 };
 
 const initialState: PaintersState = {
-  painters: [
+  painterList: [
     {
       id: 1,
       title: 'Ludovico Anaudi',
