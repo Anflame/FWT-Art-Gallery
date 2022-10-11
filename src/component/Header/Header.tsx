@@ -1,8 +1,8 @@
 import { FC, useLayoutEffect } from 'react';
 import cn from 'classnames/bind';
-import Button from '../Button';
-import Links from '../Links';
 import { Context } from '../../hooks/Context';
+import Button from '../../ui/Button';
+import Links from '../../ui/Links';
 import type { MenuProps } from '../../comon-types';
 import { ReactComponent as Logo } from '../../assets/images/logo.svg';
 import { ReactComponent as MenuIcon } from '../../assets/images/menuIcon.svg';

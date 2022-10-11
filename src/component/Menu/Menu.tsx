@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import cn from 'classnames/bind';
-import Button from '../Button';
 import { Context } from '../../hooks/Context';
+import Button from '../../ui/Button';
 import type { MenuProps } from '../../comon-types';
 import { ReactComponent as MenuIconClose } from '../../assets/images/menuIconClose.svg';
 import { ReactComponent as ThemeIcon } from '../../assets/images/themeIcon.svg';

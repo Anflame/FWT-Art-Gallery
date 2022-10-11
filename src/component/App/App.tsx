@@ -1,11 +1,11 @@
 import React, { FC, useState } from 'react';
 import cn from 'classnames/bind';
 import Cookies from 'js-cookie';
-import CardList from '../CardList';
 import Footer from '../Footer';
 import Header from '../Header';
 import Menu from '../Menu';
 import { useAppSelector } from '../../hooks/Redux';
+import CardList from '../../ui/CardList';
 import { defaultContext, ThemeContext } from '../../utils/ThemeContext';
 import styles from './styles.module.scss';
 
