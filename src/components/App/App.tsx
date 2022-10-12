@@ -1,15 +1,9 @@
 import React, { FC, useState } from 'react';
-import cn from 'classnames/bind';
 import Cookies from 'js-cookie';
-import Footer from '../Footer';
-import Header from '../Header';
-import Menu from '../Menu';
+import Layout from '../Layout';
 import { useAppSelector } from '../../hooks/Redux';
 import CardList from '../../ui/CardList';
 import { defaultContext, ThemeContext } from '../../utils/ThemeContext';
-import styles from './styles.module.scss';
-
-const cx = cn.bind(styles);
 
 export const App: FC = () => {
   const { painterList } = useAppSelector(({ painters }) => painters);
@@ -19,10 +13,6 @@ export const App: FC = () => {
     setTheme(resultTheme);
     Cookies.set('theme', resultTheme);
   };
-  const handleClickLogIn = () => {};
-  const handleClickSignUp = () => {};
-
-  const [isShow, setIsShow] = useState(false);
 
   return (
     <ThemeContext.Provider
@@ -31,22 +21,9 @@ export const App: FC = () => {
         toggleTheme,
       }}
     >
-      <Header
-        isShow={isShow}
-        setIsShow={setIsShow}
-        handleClickLogIn={handleClickLogIn}
-        handleClickSignUp={handleClickSignUp}
-      />
-      <main className={cx('main', isShow && 'menuShow')}>
+      <Layout>
         <CardList painters={painterList} />
-      </main>
-      <Footer />
-      <Menu
-        isShow={isShow}
-        setIsShow={setIsShow}
-        handleClickLogIn={handleClickLogIn}
-        handleClickSignUp={handleClickSignUp}
-      />
+      </Layout>
     </ThemeContext.Provider>
   );
 };
