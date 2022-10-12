@@ -1,8 +1,8 @@
-import { FC, useContext, useLayoutEffect } from 'react';
+import { FC, useLayoutEffect } from 'react';
 import cn from 'classnames/bind';
-import { ThemeContext } from '../../utils/ThemeContext';
-import Button from '../Button';
-import Links from '../Links';
+import { Context } from '../../hooks/Context';
+import Button from '../../ui/Button';
+import Links from '../../ui/Links';
 import type { MenuProps } from '../../comon-types';
 import { ReactComponent as Logo } from '../../assets/images/logo.svg';
 import { ReactComponent as MenuIcon } from '../../assets/images/menuIcon.svg';
@@ -18,7 +18,8 @@ export const Header: FC<MenuProps> = ({
   setIsShow,
   isShow,
 }) => {
-  const { theme, toggleTheme } = useContext(ThemeContext);
+  const { theme, toggleTheme } = Context();
+
   useLayoutEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
   }, [theme]);

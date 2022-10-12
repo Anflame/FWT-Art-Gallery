@@ -23,7 +23,8 @@ module.exports = {
   rules: {
     'react/react-in-jsx-scope': 'off',
     'import/prefer-default-export': 'off',
-    "import/no-extraneous-dependencies": [
+    'no-param-reassign': ["error", { "props": false }],
+    'import/no-extraneous-dependencies': [
       "error",
       {
         "devDependencies": [
@@ -39,11 +40,9 @@ module.exports = {
         "groups": [
           ["^react",
           "^@?\\w",
-          "[A-Z]{1}[a-zA-Z]+$",
-          "^\\./(?=.*/)(?!/?$)",
-          "^\\.(?!/?$)",
-          "constants$",
-          "comon-types$",
+          "^(\\.\\.\\/)+[A-Z]{1}[a-zA-Z]+$",
+            "^\\.(?!/?$)",
+          "^(\\.\\.\\/)*\\w+(-)?types\\u0000$",
           "(jpg|jpeg|png|svg)$",
             "^.+\\.?(css)$"],
         ]

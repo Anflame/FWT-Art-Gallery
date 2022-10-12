@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import Card from '../component/Card';
+import Card from '../ui/Card';
 import img from '../assets/images/cardImg.jpg';
 
 export default {

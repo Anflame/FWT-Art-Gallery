@@ -1,7 +1,7 @@
-import { FC, useContext } from 'react';
+import { FC } from 'react';
 import cn from 'classnames/bind';
-import { ThemeContext } from '../../utils/ThemeContext';
-import Button from '../Button';
+import { Context } from '../../hooks/Context';
+import Button from '../../ui/Button';
 import type { MenuProps } from '../../comon-types';
 import { ReactComponent as MenuIconClose } from '../../assets/images/menuIconClose.svg';
 import { ReactComponent as ThemeIcon } from '../../assets/images/themeIcon.svg';
@@ -16,11 +16,16 @@ export const Menu: FC<MenuProps> = ({
   handleClickLogIn,
   handleClickSignUp,
 }) => {
-  const { theme, toggleTheme } = useContext(ThemeContext);
-
+  const { theme, toggleTheme } = Context();
   return (
-    <div className={cx('menu', isShow && 'menuShow')}>
-      <div className={cx('menuPopUpContent', isShow && 'menuPopUpContentShow')}>
+    <div
+      className={cx('menu', isShow && 'menuShow')}
+      onClick={() => setIsShow(!isShow)}
+    >
+      <div
+        className={cx('menuPopUpContent', isShow && 'menuPopUpContentShow')}
+        onClick={(e) => e.stopPropagation()}
+      >
         <MenuIconClose
           fill={theme === 'dark' ? '#DEDEDE' : '#575757'}
           onClick={() => setIsShow(!isShow)}

@@ -1,4 +1,5 @@
 import React from 'react';
+import Cookies from 'js-cookie';
 
 interface ThemeContextType {
   theme: string;
@@ -6,7 +7,7 @@ interface ThemeContextType {
 }
 
 export const defaultContext: ThemeContextType = {
-  theme: 'dark',
+  theme: Cookies.get('theme') || 'dark',
 };
 
 export const ThemeContext =

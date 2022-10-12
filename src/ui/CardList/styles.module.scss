@@ -4,12 +4,12 @@
   display: grid;
   list-style-type: none;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  
+
   @include mini-viewport {
     grid-template-columns: 1fr;
 
-    .cardListes:not(:last-child){
-        margin-bottom: 20px;
+    .cardListes:not(:last-child) {
+      margin-bottom: 20px;
     }
   }
 
